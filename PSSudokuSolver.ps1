@@ -42,7 +42,7 @@ function solve-puzzle {
         if (validate-cell -board $board -num $i -cell $foundCell) {
             $board[$row][$col] = $i
 
-            if (solve($board)) {
+            if (solve-puzzle show-board $board) {
                 return $true
             }
 
@@ -76,16 +76,19 @@ function validate-cell {
     }
 
     #check box
-    $box_x = $cell % 3
-    $box_y = $cell % 3
+    $box_x = $cell[1] % 3
+    $box_y = $cell[0] % 3
 
-    for ($x=0; $x -lt 9; $x++ ) {
-        for ($y=0; $y -lt 9; $y++ ) {
-            if ($board[$x][$y] -eq $num -and ($x -eq $cell[0] -and $y -eq $cell[1])) {
+    for ($y=$box_y*3; $y -lt $box_y*3+3 ; $y++ ) {
+        for ($x=$box_x*3; $x -lt $box_x*3+3; $x++ ) {
+            if ($board[$y][$x] -eq $num -and ($x -eq $cell[0] -and $y -eq $cell[1])) {
                 return $false
             }
         }
     }
+
+    return $true
+}
 
 function find-empty {
     param (
