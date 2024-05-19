@@ -1,20 +1,31 @@
+# 5/18/2024
+
+foreach($demoninator in 1..100) {
+    $firstNumber = ((9/5) * (9/$demoninator))
+    $secondNumber = ((9/5) + (9/$demoninator))
+
+    if ($firstNumber -eq $secondNumber) {
+        "It's $demoninator!"
+    }
+}
+
 # 4/28/2024
 # The clock starts at 10:00 am
 # and is 4 minutes slow. What time does it say
 # at 1:02 pm
 
-$startTime = [datetime]"10:00 am"
-$newTime = $startTime
-foreach ($realHour in 1..720) {
-    $newTime = $newTime.AddSeconds(56)
-    if ($newTime -gt [DateTime]"12:58 pm") {
-        "here"
-    }
-    if ($newTime -eq [datetime]"1:02 pm") {
-        $realTime = $startTime.AddMinutes($realHour)
-        "the real time is $realTime"
-    }
-}
+# $startTime = [datetime]"10:00 am"
+# $newTime = $startTime
+# foreach ($realHour in 1..720) {
+#     $newTime = $newTime.AddSeconds(56)
+#     if ($newTime -gt [DateTime]"12:58 pm") {
+#         "here"
+#     }
+#     if ($newTime -eq [datetime]"1:02 pm") {
+#         $realTime = $startTime.AddMinutes($realHour)
+#         "the real time is $realTime"
+#     }
+# }
 
 
 # 2/17/2024
