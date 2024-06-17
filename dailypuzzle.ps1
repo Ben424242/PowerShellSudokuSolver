@@ -1,13 +1,26 @@
-# 5/18/2024
+# 6/17/2024
 
-foreach($demoninator in 1..100) {
-    $firstNumber = ((9/5) * (9/$demoninator))
-    $secondNumber = ((9/5) + (9/$demoninator))
+foreach ($javierNow in 1..100) {
+    $eduardoNow = $javierNow * 6
+    $javierIn12 = $javierNow + 12
+    $eduardoIn12 = $eduardoNow + 12
 
-    if ($firstNumber -eq $secondNumber) {
-        "It's $demoninator!"
+    if ($eduardoIn12 -eq ($javierIn12 * 2)) {
+        "Javier: $javierNow"
+        "Eduardo: $eduardoNow"
     }
 }
+
+# 5/18/2024
+
+# foreach($demoninator in 1..100) {
+#     $firstNumber = ((9/5) * (9/$demoninator))
+#     $secondNumber = ((9/5) + (9/$demoninator))
+
+#     if ($firstNumber -eq $secondNumber) {
+#         "It's $demoninator!"
+#     }
+# }
 
 # 4/28/2024
 # The clock starts at 10:00 am
