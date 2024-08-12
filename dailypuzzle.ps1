@@ -1,3 +1,14 @@
+# 8/12/2024
+
+foreach ($originalNumber in 1..500) {
+    $newNumber = $originalNumber * 1.2
+    $finalNumber = $newNumber * .8
+    
+    if ($finalNumber -eq $originalNumber - 10) {
+        "It's $originalNumber"
+    }
+}
+
 # 6/17/2024
 
 foreach ($javierNow in 1..100) {
