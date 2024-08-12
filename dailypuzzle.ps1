@@ -1,5 +1,5 @@
 # 8/12/2024
-
+# A number increased by 20% and the the result decreased by 20%. The result is 10 less than the original number
 foreach ($originalNumber in 1..500) {
     $newNumber = $originalNumber * 1.2
     $finalNumber = $newNumber * .8
