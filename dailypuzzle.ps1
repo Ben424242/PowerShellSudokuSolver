@@ -1,14 +1,30 @@
+#11/3/2024
+#Find the only 3 digit number that's 79 times the sum of its digits
+
+foreach ($number in 111..999) {
+    $numString = $number.ToString()
+    $numCharArray = $numString.ToCharArray()
+    $summedDigits = 0
+    foreach ($numChar in $numCharArray) {
+        $numInteger = ([int]$numChar) - 48
+        $summedDigits += $numInteger
+    }
+    if ($number -eq $summedDigits * 79) {
+        "It's $number"
+    }
+}
+
 # 9/15/2024
 # Zajac had 3x the $$ of Hiroko. Zoroko gave $28 to Hiroko now H has 5x $$ as Zajac
 
-foreach ($hiroko in 1..1000) {
-    $zajac = $hiroko * 3
-    $newZajac = $zajac - 28
-    $newHiroko = $hiroko + 28
-    if ($newHiroko -eq ($newZajac * 5)) {
-        " Hiroko: $hiroko Zajac: $zajac"
-    }
-}
+# foreach ($hiroko in 1..1000) {
+#     $zajac = $hiroko * 3
+#     $newZajac = $zajac - 28
+#     $newHiroko = $hiroko + 28
+#     if ($newHiroko -eq ($newZajac * 5)) {
+#         " Hiroko: $hiroko Zajac: $zajac"
+#     }
+# }
 
 # 8/12/2024
 # A number increased by 20% and the the result decreased by 20%. The result is 10 less than the original number
