@@ -3,36 +3,45 @@
 # add up to the two digits of the year
 # e.g 10/24/2025 is a match because 1+0+2+4 = 2+5
 
-function Sum-Digits {
-    param (
-        [int]$number
-    )
-    $sum = 0
-    $numString = $number.ToString()
-    foreach ($char in $numString.ToCharArray()) {
-        $sum += [int]$char - 48
+# function Sum-Digits {
+#     param (
+#         [int]$number
+#     )
+#     $sum = 0
+#     $numString = $number.ToString()
+#     foreach ($char in $numString.ToCharArray()) {
+#         $sum += [int]$char - 48
+#     }
+#     return $sum
+# }
+
+
+# $day = [datetime]"1/1/2025"
+# $numberOfSumDays = 0
+# foreach ($i in 1..365) {
+#     # $sum = $day.Month + $day.Day
+#     $daySum = Sum-Digits -number $day.Day
+#     $monthSum = Sum-Digits -number $day.Month
+
+#     if ($daySum + $monthSum -eq 7) {
+#         "It's $day"
+#         $numberOfSumDays++
+#     }
+#     $day = $day.AddDays(1)
+# }
+# "There are $numberOfSumDays in 2025"
+
+
+# 12/29/2024
+# At a point in a 280 mile trip 1/4 of the distance already traveled is
+# equal to 1/3 of the distance tom= come
+# how man more miles of the trip are there?
+
+foreach ($miles in 1..280) {
+    if ($miles / 4 -eq (280 - $miles) / 3) {
+        "It's $(280 - $miles)"
     }
-    return $sum
 }
-
-
-$day = [datetime]"1/1/2025"
-$numberOfSumDays = 0
-foreach ($i in 1..365) {
-    # $sum = $day.Month + $day.Day
-    $daySum = Sum-Digits -number $day.Day
-    $monthSum = Sum-Digits -number $day.Month
-
-    if ($daySum + $monthSum -eq 7) {
-        "It's $day"
-        $numberOfSumDays++
-    }
-    $day = $day.AddDays(1)
-}
-"There are $numberOfSumDays in 2025"
-
-
-
 
 #11/3/2024
 #Find the only 3 digit number that's 79 times the sum of its digits
