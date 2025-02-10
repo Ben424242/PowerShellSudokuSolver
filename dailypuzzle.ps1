@@ -1,3 +1,20 @@
+# 2/10/2025
+# 1300 gallons is 2% acid
+# how many gallons of acid to add for 9%
+
+$totalGallons = 1300
+$totalAcidGallons = 1300 * .02
+
+foreach ($gallonsOfAcid in 1..1000) {
+    $totalGallons++
+    $totalAcidGallons ++
+    $acidPercentage = $totalAcidGallons / $totalGallons
+    if ($acidPercentage -ge .09) {
+        "You've added $gallonsOfAcid"
+        break
+    }
+}
+
 #1/1/2025
 # Find the days in 2025 where the first four digits of the data 
 # add up to the two digits of the year
@@ -37,11 +54,11 @@
 # equal to 1/3 of the distance tom= come
 # how man more miles of the trip are there?
 
-foreach ($miles in 1..280) {
-    if ($miles / 4 -eq (280 - $miles) / 3) {
-        "It's $(280 - $miles)"
-    }
-}
+# foreach ($miles in 1..280) {
+#     if ($miles / 4 -eq (280 - $miles) / 3) {
+#         "It's $(280 - $miles)"
+#     }
+# }
 
 #11/3/2024
 #Find the only 3 digit number that's 79 times the sum of its digits
