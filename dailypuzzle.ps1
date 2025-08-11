@@ -1,20 +1,42 @@
+#8/9/2025
+<#
+Keiko has 5 grandkids. Each is exactly 3 years older than the next youngest
+The sum of the ages of totals her own age
+How old is Keiko if she is 8x the age of her youngest
+#>
+
+foreach ($youngest in 1..50) {
+    $second = $youngest + 3
+    $third = $second + 3
+    $fourth = $third + 3
+    $fifth = $fourth + 3
+
+    $totalAges = $youngest + $second + $third + $fourth + $fifth
+
+    if ($totalAges -eq ($youngest * 8)) {
+        "Keiko is $($youngest * 8)"
+    }
+
+}
+
+
 #7/3/2025
 # Omar had a nubmer of books. He gage 3/8 of them to Faidia and 1/6 to Marek.
 # Then fadia and Marek each gave 3 books back to Omar.
 # At that point, Omar had 56 books.
-how many books did he start with?
+# how many books did he start with?
 
-foreach ($OmarsOriginalBooks in 1..1000) {
-    $OmarsBooks = $OmarsOriginalBooks
-    $Faidia = $OmarsBooks * (3/8)
-    $OmarsBooks -= $Faidia
-    $Marek = $OmarsBooks / 6
-    $OmarsBooks -= $Marek
-    $OmarsBooks += 6
-    if ($OmarsBooks -eq 56) {
-        "He started with $OmarsOriginalBooks books"
-    }
-}
+# foreach ($OmarsOriginalBooks in 1..1000) {
+#     $OmarsBooks = $OmarsOriginalBooks
+#     $Faidia = $OmarsBooks * (3 / 8)
+#     $OmarsBooks -= $Faidia
+#     $Marek = $OmarsBooks / 6
+#     $OmarsBooks -= $Marek
+#     $OmarsBooks += 6
+#     if ($OmarsBooks -eq 56) {
+#         "He started with $OmarsOriginalBooks books"
+#     }
+# }
 
 # 2/10/2025
 # 1300 gallons is 2% acid
