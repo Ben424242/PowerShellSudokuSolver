@@ -1,3 +1,23 @@
+#9/6/2025
+<#
+two friends are writing a novel on paper. B uses 5 sheets a day. R uses 2 a day.
+B starts with 770, R with 530. After how many days will they have the same number of pages?
+#>
+
+$b = 770
+$r = 530
+$day = 0
+
+while ($b -ne $r ) {
+    $b -= 5
+    $r -= 2
+    $day++
+}
+
+"It took $day days"
+
+
+
 #8/9/2025
 <#
 Keiko has 5 grandkids. Each is exactly 3 years older than the next youngest
@@ -5,19 +25,19 @@ The sum of the ages of totals her own age
 How old is Keiko if she is 8x the age of her youngest
 #>
 
-foreach ($youngest in 1..50) {
-    $second = $youngest + 3
-    $third = $second + 3
-    $fourth = $third + 3
-    $fifth = $fourth + 3
+# foreach ($youngest in 1..50) {
+#     $second = $youngest + 3
+#     $third = $second + 3
+#     $fourth = $third + 3
+#     $fifth = $fourth + 3
 
-    $totalAges = $youngest + $second + $third + $fourth + $fifth
+#     $totalAges = $youngest + $second + $third + $fourth + $fifth
 
-    if ($totalAges -eq ($youngest * 8)) {
-        "Keiko is $($youngest * 8)"
-    }
+#     if ($totalAges -eq ($youngest * 8)) {
+#         "Keiko is $($youngest * 8)"
+#     }
 
-}
+# }
 
 
 #7/3/2025
