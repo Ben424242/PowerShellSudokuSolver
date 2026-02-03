@@ -1,20 +1,97 @@
+#12/29/2025
+<#
+carry pouches of gems over 8 bridges to a castle. Get 20 gems to the castle
+at each bridge a troll will take 1 gem per pouch as a toll. each pouch can hold a maximum of 10 gems
+After crossing the bridge you can redistribute the gems and discard any pouches no longer needed.
+What is the minumum number of gems needed at the start with to ensure you have 20 gems remaining to reach the castle.
+#>
+
+# Working backwards from the destination
+# After each bridge, we can redistribute gems into new pouches optimally
+# Before each bridge, we need enough gems to pay the troll (1 gem per pouch)
+
+function Get-RequiredGemsBeforeBridge {
+    param(
+        [int]$gemsNeededAfter,
+        [int]$maxGemsPerPouch = 10
+    )
+    
+    # How many pouches do we need to carry?
+    # Each pouch can hold maxGemsPerPouch gems but costs 1 gem toll
+    # So each pouch effectively delivers (maxGemsPerPouch - 1) gems after the toll
+    # We need: pouchesCarrying * (maxGemsPerPouch - 1) >= gemsNeededAfter
+    $pouchesCarrying = [Math]::Ceiling($gemsNeededAfter / ($maxGemsPerPouch - 1))
+    
+    # Total gems needed before the bridge = gems after + toll
+    return $gemsNeededAfter + $pouchesCarrying
+}
+
+# Work backwards through all 8 bridges
+$gemsNeeded = 20  # Final requirement at castle
+
+for ($bridge = 8; $bridge -ge 1; $bridge--) {
+    $gemsNeeded = Get-RequiredGemsBeforeBridge -gemsNeededAfter $gemsNeeded
+    "Before Bridge $bridge`: need $gemsNeeded gems"
+}
+
+"The minimum number of gems needed at the start: $gemsNeeded"
+
+
+
+#9/27/2025
+<#
+a large number 1000...000. Subtract 974 and the sum of the resultting digits is 638.
+How many zeros were in the original number?
+#>
+
+# foreach ($numZeros in 1..1000) {
+#     $numberString = "1" + ("0" * $numZeros)
+#     $number = [bigint]$numberString
+#     $result = $number - 974
+#     $resultString = $result.ToString()
+#     $sumOfDigits = 0
+#     foreach ($char in $resultString.ToCharArray()) {
+#         $sumOfDigits += [int]$char - 48
+#     }
+#     if ($sumOfDigits -eq 638) {
+#         "The number of zeros is $numZeros"
+#     }
+# }
+
+$bigNumber = 10000000
+$notFound = $true
+
+do {
+    $result = $bigNumber - 974
+    $resultString = $result.ToString()
+    $sumOfDigits = 0
+    foreach ($char in $resultString.ToCharArray()) {
+        $sumOfDigits += [int]$char - 48
+    }
+    if ($sumOfDigits -eq 638) {
+        $notFound = $false
+        "The number of zeros is $($bigNumber.ToString().Length - 1)"
+    }
+    $bigNumber *= 10
+} while ($notFound)
+
 #9/6/2025
 <#
 two friends are writing a novel on paper. B uses 5 sheets a day. R uses 2 a day.
 B starts with 770, R with 530. After how many days will they have the same number of pages?
 #>
 
-$b = 770
-$r = 530
-$day = 0
+# $b = 770
+# $r = 530
+# $day = 0
 
-while ($b -ne $r ) {
-    $b -= 5
-    $r -= 2
-    $day++
-}
+# while ($b -ne $r ) {
+#     $b -= 5
+#     $r -= 2
+#     $day++
+# }
 
-"It took $day days"
+# "It took $day days"
 
 
 
