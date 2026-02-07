@@ -1,8 +1,8 @@
-#7/3/2025
+# #7/3/2025
 # Omar had a nubmer of books. He gage 3/8 of them to Faidia and 1/6 to Marek.
 # Then fadia and Marek each gave 3 books back to Omar.
 # At that point, Omar had 56 books.
-how many books did he start with?
+# how many books did he start with?
 
 foreach ($OmarsOriginalBooks in 1..1000) {
     $OmarsBooks = $OmarsOriginalBooks
