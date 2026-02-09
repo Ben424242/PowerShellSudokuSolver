@@ -1,3 +1,31 @@
+#2/8/2026
+<#
+Put the digit 6 on the end of a number and that number is increased by 3669. What is the number?
+#>
+
+
+
+# $total = 100000
+# $current = 0
+
+# foreach ($n in 1..100000) {
+#     $current++
+#     $percentComplete = ($current / $total) * 100
+#     Write-Progress -Activity "Searching for number" -Status "Testing $n" -PercentComplete $percentComplete
+    
+#     $nstring = [string]$n
+#     $nstring = $nstring + "6"
+#     $newNum = [int]$nstring
+#     $difference = $newNum - $n
+#     if ($difference -eq 3669) {
+#         "It's $n"
+#         break
+        
+#     }
+# }
+
+Write-Progress -Activity "Searching for number" -Completed
+
 #12/29/2025
 <#
 carry pouches of gems over 8 bridges to a castle. Get 20 gems to the castle
@@ -10,31 +38,31 @@ What is the minumum number of gems needed at the start with to ensure you have 2
 # After each bridge, we can redistribute gems into new pouches optimally
 # Before each bridge, we need enough gems to pay the troll (1 gem per pouch)
 
-function Get-RequiredGemsBeforeBridge {
-    param(
-        [int]$gemsNeededAfter,
-        [int]$maxGemsPerPouch = 10
-    )
+# function Get-RequiredGemsBeforeBridge {
+#     param(
+#         [int]$gemsNeededAfter,
+#         [int]$maxGemsPerPouch = 10
+#     )
     
-    # How many pouches do we need to carry?
-    # Each pouch can hold maxGemsPerPouch gems but costs 1 gem toll
-    # So each pouch effectively delivers (maxGemsPerPouch - 1) gems after the toll
-    # We need: pouchesCarrying * (maxGemsPerPouch - 1) >= gemsNeededAfter
-    $pouchesCarrying = [Math]::Ceiling($gemsNeededAfter / ($maxGemsPerPouch - 1))
+#     # How many pouches do we need to carry?
+#     # Each pouch can hold maxGemsPerPouch gems but costs 1 gem toll
+#     # So each pouch effectively delivers (maxGemsPerPouch - 1) gems after the toll
+#     # We need: pouchesCarrying * (maxGemsPerPouch - 1) >= gemsNeededAfter
+#     $pouchesCarrying = [Math]::Ceiling($gemsNeededAfter / ($maxGemsPerPouch - 1))
     
-    # Total gems needed before the bridge = gems after + toll
-    return $gemsNeededAfter + $pouchesCarrying
-}
+#     # Total gems needed before the bridge = gems after + toll
+#     return $gemsNeededAfter + $pouchesCarrying
+# }
 
-# Work backwards through all 8 bridges
-$gemsNeeded = 20  # Final requirement at castle
+# # Work backwards through all 8 bridges
+# $gemsNeeded = 20  # Final requirement at castle
 
-for ($bridge = 8; $bridge -ge 1; $bridge--) {
-    $gemsNeeded = Get-RequiredGemsBeforeBridge -gemsNeededAfter $gemsNeeded
-    "Before Bridge $bridge`: need $gemsNeeded gems"
-}
+# for ($bridge = 8; $bridge -ge 1; $bridge--) {
+#     $gemsNeeded = Get-RequiredGemsBeforeBridge -gemsNeededAfter $gemsNeeded
+#     "Before Bridge $bridge`: need $gemsNeeded gems"
+# }
 
-"The minimum number of gems needed at the start: $gemsNeeded"
+# "The minimum number of gems needed at the start: $gemsNeeded"
 
 
 
@@ -58,22 +86,22 @@ How many zeros were in the original number?
 #     }
 # }
 
-$bigNumber = 10000000
-$notFound = $true
+# $bigNumber = 10000000
+# $notFound = $true
 
-do {
-    $result = $bigNumber - 974
-    $resultString = $result.ToString()
-    $sumOfDigits = 0
-    foreach ($char in $resultString.ToCharArray()) {
-        $sumOfDigits += [int]$char - 48
-    }
-    if ($sumOfDigits -eq 638) {
-        $notFound = $false
-        "The number of zeros is $($bigNumber.ToString().Length - 1)"
-    }
-    $bigNumber *= 10
-} while ($notFound)
+# do {
+#     $result = $bigNumber - 974
+#     $resultString = $result.ToString()
+#     $sumOfDigits = 0
+#     foreach ($char in $resultString.ToCharArray()) {
+#         $sumOfDigits += [int]$char - 48
+#     }
+#     if ($sumOfDigits -eq 638) {
+#         $notFound = $false
+#         "The number of zeros is $($bigNumber.ToString().Length - 1)"
+#     }
+#     $bigNumber *= 10
+# } while ($notFound)
 
 #9/6/2025
 <#
