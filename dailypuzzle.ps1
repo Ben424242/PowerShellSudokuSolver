@@ -1,3 +1,19 @@
+<#
+2 / 18 / 2026
+6 years ago a woman was 9 times the age of her niece and she is now 3 times the age of her niece.
+What are their currect ages?
+#>
+
+foreach ($auntAge in 6..100) {
+  foreach ($nieceAge in 6..90) {
+    if ((($auntAge - 6) -eq (($nieceAge - 6) * 9)) -and ($auntAge -eq ($nieceAge * 3))) {
+      "Aunt is $auntAge and niece is $nieceAge"
+      break
+    }
+  }
+}
+
+
 #2/8/2026
 <#
 Put the digit 6 on the end of a number and that number is increased by 3669. What is the number?
@@ -24,7 +40,7 @@ Put the digit 6 on the end of a number and that number is increased by 3669. Wha
 #     }
 # }
 
-Write-Progress -Activity "Searching for number" -Completed
+# Write-Progress -Activity "Searching for number" -Completed
 
 #12/29/2025
 <#
